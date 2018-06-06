@@ -13,12 +13,8 @@ $database = new database();
 $conn = $database->con();
 $sel = $database->sel($conn);
 
-echo $name.'<br>';
-echo $lastname.'<br>';
-echo $bday.'<br>';
-echo $email.'<br>';
-echo $tel.'<br>';
-echo $client_id.'<br>';
-echo $operator_id.'<br>';
-echo $journey_date;
+$sql = "INSERT INTO usuarios(NOMBRE, APELLIDO, CUMPLE, CORREO, TELEFONO, ID_CLIENTE, ID_OPERADOR, FECHA_JORNADA) VALUES('".$name."','".$lastname."',".$bday.",'".$email."',".$tel.",".$client_id.",".$operator_id.",".$journey_date.");";
+$query = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($query, MYSQLI_BOTH);
+
  ?>
