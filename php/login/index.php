@@ -14,6 +14,13 @@
    echo "Usuario no registrado, Por favor regístrese";
    return;
  }
- echo 'http://127.0.0.1/dashboard/formulario-cybergenios/form/';
+ echo '<div style="display: flex;justify-content: center;">
+	<button type="button">
+		<a href="form">Capturar Datos CRM</a>
+		</button>
+	<button type="button">
+		<a href="queries">Consultar Información CRM</a>
+		</button>
+</div>';
 
  ?>

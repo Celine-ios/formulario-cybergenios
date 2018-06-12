@@ -2,7 +2,13 @@ function send_request() {
   var ajax = new XMLHttpRequest();
   ajax.onreadystatechange = function() {
     if (ajax.readyState == 4 && ajax.status == 200) {
-      location.href= this.responseText;
+
+    if(this.responseText.indexOf('U') != -1){
+    alert(ajax.responseText);
+    return;
+}
+      document.getElementsByTagName('main')[0].innerHTML=this.responseText;
+
     }
   };
   ajax.open('post','php/login/index.php', true);

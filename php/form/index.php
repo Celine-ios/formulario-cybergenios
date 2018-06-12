@@ -15,6 +15,11 @@ $sel = $database->sel($conn);
 
 $sql = "INSERT INTO usuarios(NOMBRE, APELLIDO, CUMPLE, CORREO, TELEFONO, ID_CLIENTE, ID_OPERADOR, FECHA_JORNADA) VALUES('".$name."','".$lastname."',".$bday.",'".$email."',".$tel.",".$client_id.",".$operator_id.",".$journey_date.");";
 $query = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($query, MYSQLI_BOTH);
+if (!$query) {
+	die('ERROR: '.mysqli_error($conn));
+	return;
+}
+echo "Datos introducidos";
+
 
  ?>
