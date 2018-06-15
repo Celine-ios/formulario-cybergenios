@@ -6,9 +6,9 @@
 	$con = $database->con();
 	$sel = $database->sel($con);
 	/* User's Filter */
-	$client_id = $_GET['cid'];
+	$jdate = $_GET['jdate'];
 
-	$sql =  'select * from usuarios where ID_CLIENTE='.$client_id;
+	$sql =  'select * from usuarios where FECHA_JORNADA='.$jdate;
 	$query = mysqli_query($con,$sql);
 	$row = mysqli_fetch_array($query, MYSQLI_BOTH);
 	echo '<ul>
@@ -23,4 +23,3 @@
  	</ul>';
 
  ?>
- 

@@ -5,8 +5,8 @@ function sendRequest() {
 			document.getElementById('loader').innerHTML = this.responseText;
 		}
 	};
-	var client_id = document.getElementsByName('client_id')[0].value;
-	ajax.open('get','../../php/queries/client-id/index.php?cid='+client_id, true);
+	var journey_date = document.getElementsByName('journey_date')[0].value;
+	ajax.open('get','../../php/queries/journey/index.php?jdate='+journey_date, true);
 	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	ajax.send();
 
